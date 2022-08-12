@@ -22,10 +22,10 @@ Para lo anterior, como se mencionó, se utilizaron dos matrices led en una dispo
 Así, mismo, estos botones se utilizan para salir del mensaje inicial, del menú de pausa, del juego entre otros.
 
 ## DATOS TÉCNICOS
-IDE utilizado: Arduino 1.8.19
-Sistema operativo: Windsow 10
-Lenguaje utilizado:  C++
-Software en la que se desarrollo la simulación: Proteus 8.10    
+IDE utilizado: Arduino 1.8.19 <br>
+Sistema operativo: Windsow 10 <br>
+Lenguaje utilizado:  C++ <br>
+Software en la que se desarrollo la simulación: Proteus 8.10     
 
 ## CONTENIDO
 
@@ -45,7 +45,7 @@ Este mensaje es mostrado en la pantalla (matrices) al iniciar el dispositivo, co
 ![Trasicion seis de P](imagenes/mensaje/p6.png)
 
 
-#### Clase Mensaje
+#### **Clase Mensaje**
 ##### **Atributos**
 ```c++
 byte letrero[192];
@@ -82,27 +82,31 @@ avanzar(): incrementa el indice, a la posicion inicial del proximo rango que se 
 * actualizarOrientacion(bool valor): modifica el valor de or_normal a true o false dependiendo de la direccion del mensaje.
 
 
-#### Menu Pausa
+#### **Menu Pausa**
 El menú de pausa servirá para que el usuario pueda realizar otra actividad sin que sea perjudicado de ninguna manera en el juego. Al estar dentro del menú, se podrá:
 - Mostrar la siguiente pieza que se agregará al juego.
 - Mostrar los puntos obtenidos actualmente.
 - Volver a mostrar el mensaje que se mostraba al principio.
 - Reanudar o Reiniciar la partida.
  
-## _Variables globales_
-> int filas = Arreglo de los pines de las filas de la matriz sin driver.
+##### **Variables globales**
+```c++
 int columnas= Arreglo de los pines de las columnas de la matriz sin driver.
 lc = Arreglo de tipo LedControl, para manejar la matriz con driver.
-int temporizador = temporizador para el que se tomarán las medidas de los segundos en los que fue presionado el botón "Start".
+int temporizador = temporizador para el que se tomarán las medidas de los segundos en los que fue presionado el botón 
+```
+* int filas = Arreglo de los pines de las filas de la matriz sin driver.
+
+* "Start".
 bool cambio_pausa = booleano para saber si se presionó el botón, y cambiar entre las funciones para mostrar los puntos, y mostrar la siguiente pieza.
 
-## _Metodos_
+#### **Metodos**
 - setup : Metodo inicial, para iniciar los pines de las matrices.
 - pausa : Metodo en el cual, al ejecutarse, se mostrará la sigueinte pieza, si se presiona el botón "Start" cambiará a mostrar el puntaje; si se presiona por 2 segundos, procederá a mostrar el mensaje inicial; a los 3 segundos reanudará el juego; a los 4 segundos reiniciará el juego, y pasados 5 segundos mostrará un mensaje de error, el cual se quitará al presionar el botón "Start".
 - mostrarletras_pausa(int [][] , byte []) : como su nombre indica, nos servirá para mostrar las letras, piezas, puntaje, etc... que se tenga que mostrar, recibiendo los datos al inicio de la función "
 - LimpiarMatriz : sirve para limpiar las matrices por completo.
 
-#### Estructua Bloque
+#### **Estructua Bloque**
 
 ##### **Atributos**
 ```c++
@@ -110,7 +114,7 @@ int x, y;
 ```
 Almacena la posición horizontal y vertical con respecto a la esquina inferior izquierda de la matriz izquierda de la pantalla. Cabe mencionar que una pieza esta compuesta de 1 a 4 bloques.
 
-#### Estructua Pieza
+#### **Estructua Pieza**
 
 ##### **Atributos**
 ```c++
@@ -147,7 +151,7 @@ void verificarCoordenadas();
 * bajar(): disminuye en uno, la posición vertical de cada bloque por el que está compuesta una pieza.
 * dibujar(byte *pantalla): recibe como parametro la pantalla (matriz que almacena el estado lógico de cada led) y almacena en ella una determinada pieza.
 
-#### Clase Juego
+#### **Clase Juego**
 ##### **Atributos**
 ```c++
 Pieza pieza_actual, pieza_siguiente;
@@ -164,7 +168,7 @@ void dibujar(byte *pantalla);
 * iniciar(): genera la pieza que va a mostrar en el momento y la pieza siguiente.
 * generarPieza(): genera una posición vertical aleatoria, asi como también la posición de la pieza actual y la siguiente.
 
-#### Clase Tablero
+#### **Clase Tablero**
 ##### **Atributos**
 ```c++
 bool TableroBool[16][8];
