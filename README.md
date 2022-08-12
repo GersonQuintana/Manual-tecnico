@@ -206,7 +206,7 @@ int   Punteo,ColumnaPieza5,Error;
 
 Restricción de la pieza valores aceptados de las piezas características No de pieza, _Fila y  _Columna posición de la celda de control en el tablero y Posición de rotación de la pieza ver la figura siguiente para ver el número de pieza y  posiciones disponibles de las piezas. 
 
-![Figura 1](imagenes/tablero/t2.PNG)
+![Figura 1](imagenes/tablero/t2.PNG)<br>
 Restricción de columnas 0 -7 sin driver, de las columnas 8 a 15 con driver;
 
 ###### **Funcionamiento de colisión**
