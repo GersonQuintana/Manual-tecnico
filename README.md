@@ -83,28 +83,20 @@ avanzar(): incrementa el indice, a la posicion inicial del proximo rango que se 
 
 
 #### **Menu Pausa**
-El menú de pausa servirá para que el usuario pueda realizar otra actividad sin que sea perjudicado de ninguna manera en el juego. Al estar dentro del menú, se podrá:
-- Mostrar la siguiente pieza que se agregará al juego.
-- Mostrar los puntos obtenidos actualmente.
-- Volver a mostrar el mensaje que se mostraba al principio.
-- Reanudar o Reiniciar la partida.
- 
-##### **Variables globales**
-```c++
-int columnas= Arreglo de los pines de las columnas de la matriz sin driver.
-lc = Arreglo de tipo LedControl, para manejar la matriz con driver.
-int temporizador = temporizador para el que se tomarán las medidas de los segundos en los que fue presionado el botón 
-```
-* int filas = Arreglo de los pines de las filas de la matriz sin driver.
+Al entrar al menú de pausa, se mostrarán la siguiente pantalla:
+![P1](imagenes/pausa/p1.png)
 
-* "Start".
-bool cambio_pausa = booleano para saber si se presionó el botón, y cambiar entre las funciones para mostrar los puntos, y mostrar la siguiente pieza.
+En la que contiene la letra N, y al lado izquierdo la siguiente pieza que aparecerá.
+Al presionar el botón Start la pantalla cambiará a mostrar los puntos que se lleven por el momento:
 
-#### **Metodos**
-- setup : Metodo inicial, para iniciar los pines de las matrices.
-- pausa : Metodo en el cual, al ejecutarse, se mostrará la sigueinte pieza, si se presiona el botón "Start" cambiará a mostrar el puntaje; si se presiona por 2 segundos, procederá a mostrar el mensaje inicial; a los 3 segundos reanudará el juego; a los 4 segundos reiniciará el juego, y pasados 5 segundos mostrará un mensaje de error, el cual se quitará al presionar el botón "Start".
-- mostrarletras_pausa(int [][] , byte []) : como su nombre indica, nos servirá para mostrar las letras, piezas, puntaje, etc... que se tenga que mostrar, recibiendo los datos al inicio de la función "
-- LimpiarMatriz : sirve para limpiar las matrices por completo.
+![P1](imagenes/pausa/p2.png)
+
+Al presionar el botón por un tiempo específico realizará diversas acciones:
+* 2 segundos, se mostrará el mensaje inicial.
+* 3 segundos, se reanudará la partida.
+* 4 segundos se reiniciará la partida.
+* 5 segundos o más, se mostrará una pantalla de error.
+
 
 #### **Estructua Bloque**
 
